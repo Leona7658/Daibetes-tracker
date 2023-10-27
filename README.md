@@ -1,25 +1,58 @@
 # Daibetes-tracker
+![cover](demo-images/cover.png)
 
+# Getting started
+- Install node_modules via package.json
+> Type in terminal: npm install
+- Initialize the json-server and start the live-server
+> Type in terminal: npm start
+- View in your browser
+> Go to http://localhost:3000
 ## Table of Contents
 - [Home](#section-1)
 - [Clinican Dashboard](#section-2)
-  - [Subsection 2.1](#subsection-2-1)
-  - [Subsection 2.2](#subsection-2-2)
 - [Patient Dashboard](#section-3)
 
-## Home
-Diabetes@home allows patient to record their daily health data, see clincian comments, clinican note history and a leaderboard to encourage patients to record their health data. 
-registered clinican can track their patients information, edit clinican comments, add notes, change health data threshold, see clinican note history of a specific patient and register a new patient.
+## Home and Usage
+- Diabetes@home allows patient to record their daily health data, health data history, see patient comments, clinician note history and a leaderboard to encourage patients to record their health data. 
+- Registered clinican can track their patients information, edit clinican comments, add notes, change health data threshold, see clinican note history of a specific patient and register a new patient.
 
-## Clinican Dashboard
+## Image Display for Clinican account
+Created account: chris@gmail.com
+Password: 12345678
+
+Clinician dashoard:
+![clinician-dashboard](demo-images/clinician%20dashboard.png)
+
+Register patient:
+![register](demo-images/register.png)
+
+Clinican notes and threshold edit:
+![clinician-edit](demo-images/clinician-note.png)
 
 
-### Subsection 2.1
-This is the content of Subsection 2.1.
-![OpenAI Logo](https://www.example.com/openai-logo.png)
+Clinican notes history:
+![clinician-notes](demo-images/note-history.png)
 
-### Subsection 2.2
-This is the content of Subsection 2.2.
+Patient comments:
+![Clinician-comments](demo-images/clinician-comments.png)
+
+Patient record history (shared with corresponding patient):
+![patient-history](demo-images/data-history.png)
+
 
 ## Patient Dashboard
-This is the content of Section 3.
+Created account: pat@gmail.com
+Password: 12345678
+
+Patient dashboard: 
+![patient-dashboard](demo-images/patient-dashboard.png)
+
+Patient record data:
+![patient-edit](demo-images/data-record.png)
+
+Patient leaderboard:
+![patient-leaderboard](demo-images/leaderboard.png)
+
+Patient record history (shared with corresponding clinician):
+![patient-history](demo-images/data-history.png)
