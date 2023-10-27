@@ -8,6 +8,9 @@
 > Type in terminal: npm start
 - View in your browser
 > Go to http://localhost:3000
+
+# Tools:
+- Node.js, Express.js, MongoDB, HTML, Javascript, CSS, Handlebars
 ## Table of Contents
 - [Home](#section-1)
 - [Clinican Dashboard](#section-2)
@@ -22,7 +25,7 @@ Created account: chris@gmail.com
 Password: 12345678
 
 Clinician dashoard:
-![clinician-dashboard](demo-images/clinician%20dashboard.png)
+![clinician-dashboard](demo-images/clinician-dashboard.png)
 
 Register patient:
 ![register](demo-images/register.png)
