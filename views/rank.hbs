@@ -1,0 +1,32 @@
+<link href="../public/style/rank.css" rel="stylesheet" >
+{{> about-top-nav}}
+{{> p-top-nav}}
+
+<div class="rank_container">
+    <div id="users">
+        <table>
+            <tr>
+                <th>Users</th>
+                <th>Engagement rate</th>
+                <th>Ranking</th>
+            </tr>
+
+            {{#each patients}}
+            <tr>
+                <td>{{this.screenName}}</th>
+                <td>{{this.eRate}}</td>
+                <td>{{rankPosition @index}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <div id="trophy">
+        <h3>Congratulation !</h3>
+        <img src="../public/image/trophy.png" alt="trophy image">
+
+    </div>
+
+</div>
+
+{{> logout}}

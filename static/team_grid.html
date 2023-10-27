@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about this website</title>
+    <link rel="stylesheet" href="../public/style/diabetes_team_grid.css">
+    <link rel="stylesheet" href="../public/style/header-grid.css">
+
+</head>
+
+<body>
+
+    <header class="header-grid">
+        <div class = "diabete-home">
+              <p class = "diabete-home-first">
+                  <a href="/">Diabetes@Home</a>
+              </p>        
+        </div>
+  
+        <div class = "buttons">
+            <div ><button id = "dark-mode">Dark&nbspMode</button> </div>
+            <div ><button><a href="javascript:history.back()">Back</a></button></div>
+        </div>
+  
+    </header>
+
+    <main class = "grid_box">
+        
+        <div class = "down_left">
+            <article class="text_background">
+
+                <h3>Login requirement information</h3>
+                <p> You have to login first before using the whole features.
+                    If you are a Clinican you will be given an 
+                    account to login in. if you are a patient, 
+                    you will be register by you clinician.</p>
+
+                <h3 >Other features</h3>
+                <p >
+                    Include record health data and rank of all<br>
+                        patient’s engagement rate<br>
+                </p>                
+            </article>
+        </div>
+
+        <div class = "down_right" >  
+            <article class="text_background">
+                <h3>Our Team</h3>
+                <p >
+                    Diabetes@Home works to raise the awareness about the seriousness 
+                    of diabetes, promoting prevention and early detection strategies and
+                    advocating for better standards of care. Diabetes Australia is also a
+                    significant financial contributor to research into better treatments for
+                    diabetes and the search for a cure.
+                </p>  
+            <img id = website-image src="https://cdn.pixabay.com/photo/2017/12/03/12/46/diabetes-2994808_1280.jpg"
+            alt="unable to show picture"/>                              
+            </article> 
+        </div>
+
+    </main>
+
+    <footer >
+        copy right reserved by Diabetes@home
+    </footer>
+
+    <script>
+        const mode = document.getElementById("dark-mode");
+        mode.onclick = function(){
+          document.body.classList.toggle("dark-theme");
+        }
+      </script>
+    
+</body>
+</html>

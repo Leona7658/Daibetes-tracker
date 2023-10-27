@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style/login.css">
+    <link rel="stylesheet" href="../public/style/header-grid.css">
+    <title>Login Start</title>
+</head>
+
+<body >
+    <header class = "header-grid">
+        <div class = "diabete-home">
+            <p class = "diabete-home-first">
+                <a href="static/start_page.html">Diabetes@Home</a>
+            </p>     
+        </div>
+        <div class = "buttons">
+            <div ><button id = "dark-mode">Dark&nbspMode</button> </div>
+            <div ><button><a href="javascript:history.back()">Back</a></button></div>
+        </div>
+    </header>
+
+    <main class = "container">
+        <div  id="Subtitle">
+            <h1>Login</h1>
+            <h2>You are a:</h2>
+        </div>
+        <div>
+            
+        </div>
+        <div  id="Patient">
+            <h2>
+                <a href="/home/login_patient">Patient</a>
+            </h2>
+        </div>
+        
+        <div  id="Clinician">
+            <h2 >
+                <a href="/home/login_clinician">Clinician</a>
+            </h2>
+        </div>
+    </main>
+
+    <footer class="footer-home" >
+        copy right reserved by Diabetes@home
+    </footer>
+
+    <script>
+        const mode = document.getElementById("dark-mode");
+        mode.onclick = function(){
+          document.body.classList.toggle("dark-theme");
+        }
+      </script>
+
+</body>
+
+</html>

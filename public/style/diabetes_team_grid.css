@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+:root{
+    --background-color: #CDDCDB;
+    --button-color:#FFFFFF;
+    --text-bkgd-color:#FFFFFF;
+}
+
+.dark-theme{
+    --background-color: #687DA8;
+    --button-color:#8498C5;
+    --text-bkgd-color:#8498C5; 
+}
+
+body { 
+    background-color: var(--background-color);
+    font-size: 3vh;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab';
+}
+
+.down_left{
+    grid-area: down_left;
+
+}
+.down_right{
+    grid-area: down_right;
+}
+
+.grid_box{
+    display: grid;
+    grid-template-areas:
+        'down_left down_right';
+        gap: 1vw;
+        background-color: var(--background-color);
+        padding: 10px;
+}
+
+.grid_box > div {
+    text-align: justify;
+    padding: 1vw;
+    line-height: 3vw;
+}
+
+
+.flex_box{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.flex_box > div{
+    margin: 1vw;
+    padding: 0.5vw;
+    align-self:center;
+}
+
+
+
+.text_background{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px; 
+    background-color: var(--text-bkgd-color);
+    text-align: center;
+    padding: 2vw;
+}
+
+#video{
+    width: 50vw;
+    height: 30vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;  
+}
+
+#links{
+    margin-top: 2vw;            
+    padding: 1vw;
+}
+
+#website-image{
+    width: 10vw;
+    height: 10vw;
+    float: inline-end;
+    border-radius: 45px;
+}
+
+@media screen and (max-width: 640px) {  /* page layout for phones */
+    .grid_box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #video {
+        width:90vw;
+        height: 45vw;
+        margin-bottom: 1vh;
+    }
+
+    .grid_box > div {
+        line-height: 3vh;
+    }
+}

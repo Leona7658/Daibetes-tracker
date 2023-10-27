@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/public/style/clinical_note_history.css">
+
+{{> about-top-nav}}
+{{> c-top-nav}}
+{{> choose-time-range}}
+
+<table >
+    <tr>
+
+        <th input type="text">{{patient.firstName}} {{patient.lastName}}</th>
+    </tr>
+    {{#each notes}}
+        <form action="/home/note_history/{{../patient._id}}" method="POST">
+            <tr>
+                <td >
+                    {{this.noteDate}}
+                </td>
+
+                <td class="grey_block"> 
+                    {{this.note}}
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+    
+</table>
+
+{{> logout}}
+        
+   
+

@@ -1,0 +1,72 @@
+
+<link href="../public/style/register_detail.css" rel="stylesheet" />
+  
+{{> about-top-nav}}
+{{> c-top-nav}}
+
+<form action="/home/register", method="POST">
+    <input type="hidden" name="clinican" value=""></input>
+    <div class="container">
+        <div class="login_start_element" id="info">
+            <h2>Register a new account</h2>
+            {{#if message}}
+            <h3>{{message}}</h3>
+            {{/if}}
+        </div>
+
+        <div class="List1">
+            <div class="email login_start_element login_start_box " style="text-align: left;"> 
+                <label for="email">email:</label>
+                <input type="email" placeholder="Enter Email" name="email" value ="{{data.email}}" required></input>
+                </div>
+
+            <div class="first login_start_element login_start_box " style="text-align: left;">
+                <label for="fname">first name:</label>
+                <input name="fname" placeholder="Enter First Name" value ="{{data.fname}}"required></input>
+                    </div>
+
+            <div class="date-of-birth login_start_element login_start_box " style="text-align: left;">
+                <label for="birthyear">year of birth:</label>
+                <input type="number" placeholder="Enter Year Of Birth" name="birthyear" min="1900" max="2022" value ="{{data.birthyear}}"required></input>
+                </div>
+            <div class="password login_start_element login_start_box  " style="text-align: left;">
+                <label for="pwd">password:</label>
+                <input type = "password" name="pwd" placeholder="Enter Password" minlength="8" value ="{{data.password}}"required></input>
+                </div>
+            <div class="confirm login_start_element login_start_box  " style="text-align: left;">
+                <label for="confirm">confirm password:</label>
+                <input type ="password" name ="confirm" placeholder="Enter Password" minlength="8" value ="{{data.confirm}}"required></input>
+                </div>
+            
+            
+        </div>
+
+        <div class="List">
+            <div class="Screen-name login_start_element login_start_box " style="text-align: left;">
+                <label for="scrname">screen name:</label>
+                <input name="scrname" placeholder="Enter Screen Name" value ="{{data.scrname}}"required></input>
+                </div>
+
+            <div class="Last-name login_start_element login_start_box " style="text-align: left;">
+                <label for="lname">last name:</label>
+                <input name="lname" placeholder="Enter Last Name" value ="{{data.lname}}"required></input>
+                </div>
+            <div class="clinician login_start_element login_start_box " style="text-align: left;">
+                <label for="clinician">clinician email:</label>
+                <input type ="email" name="clinician" placeholder="Enter In Charged Clinician Email" value ="{{data.clinician}}" required></input>
+                </div>
+            <div class="bio-text login_start_element login_start_box " style="text-align: left;">
+                <label for="biotext">bio text:</label>
+                <input name="biotext" placeholder="Enter Bio Text" value ="{{data.biotext}}"required></input>
+                </div>
+        
+            <div class="submit">
+            <button class="login_start_element login_start_box" type ="submit">submit</button>
+                
+        
+            </div>
+        </div>
+    </div>
+</form>
+
+{{> logout}}

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/public/style/clinician-comment.css">
+
+{{> about-top-nav}}
+{{> c-top-nav}}
+
+
+<aside class = "user-image-info">
+    <aside id = "user-img">
+        <img src="/public/image/avatar/images.jpg" alt="user image">
+        <figcaption>
+            <a href="/home/patient_details/{{patient._id}}">{{patient.firstName}} {{patient.lastName}}</a>
+        </figcaption>
+    </aside>
+
+    <aside id = "user-info">
+       
+        <ul>
+            {{#each patient.records}}
+                {{#ifRecent this.recordDate}}
+                    {{#each this.data}}
+                        {{#ifRecorded this.status}}
+                            {{#ifAbnormal this.valueMin this.valueMax this.value}}
+                                <li style="background-color: var(--danger);">
+                                    {{this.fullName}}: {{this.value}}</li>
+                            {{else}}
+                                <li >{{this.fullName}}: {{this.value}}</li>
+
+                            {{/ifAbnormal}}
+                        {{/ifRecorded}}
+
+                        {{#ifUnrecorded this.status}}
+                            <li style="background-color: var(--unrecorded);">{{this.fullName}}: </li>
+
+                        {{/ifUnrecorded}}
+                    {{/each}}
+                {{/ifRecent}}
+                
+            {{/each}}
+        </ul>
+
+    </aside>
+
+</aside>
+
+<div class="comment-section">
+
+    <h3>All Comments:</h3>
+    <ul>
+        {{#each patient.records}}
+            {{#ifRecent this.recordDate}}
+                {{#each this.data}}
+                    {{#ifRecorded this.status}}
+                        <li><a href="/home/patient_details/{{@root.patient._id}}">{{this.comment}}    Time: {{this.createdAt}}</a></li>
+                    {{/ifRecorded}}
+                {{/each}}
+            {{/ifRecent}}
+        {{/each}}
+        
+        <li>...............................comment history...............................</li> 
+        {{#each patient.records}}  
+            {{#ifRecent this.recordDate}} 
+            {{else}}
+                {{#each this.data}}   
+                    {{#ifRecorded this.status}}       
+                        <li><a href="/home/patient_details/{{@root.patient._id}}">{{this.comment}}    Time: {{this.createdAt}}</a></li>
+                    {{/ifRecorded}}
+                {{/each}}
+            {{/ifRecent}}
+        {{/each}}
+    </ul>
+
+</div>
+
+{{> logout}}

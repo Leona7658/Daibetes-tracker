@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="/public/style/patient_details(clinican).css">
+
+{{> about-top-nav}}
+{{> c-top-nav}}
+<div class="patient_details_container">
+    <div class="login_start_element" id="subtitle">
+        <h4 style = "text-align: left;">
+            <a href="/home/clinician_dashboard">Patient details</a></h4>
+        
+    </div>
+
+    <div class = "login_start_element" id="notes">
+        <table>
+            <form action="/home/patient_details/{{patient._id}}" method="POST">
+                <tr >
+                    <th>Patient name:</th>
+                    <td class="login_start_box login_start_element" >{{patient.firstName}} {{patient.lastName}}</td>
+                </tr>
+
+                {{#if notes}}
+                <tr>
+                    <th>LatestClinical Notes:</th>
+                    <td class="login_start_box login_start_element" >{{notes.note}}</td>
+                </tr>
+                {{/if}}
+
+                {{#if message}}
+                <tr>
+                    <th>Latest Support message:</th>
+                    <td class="login_start_box login_start_element" >{{message.message}}</td>
+                </tr>
+                {{/if}}
+
+                <tr>
+                    <th>Add clinical notes:</th>
+                    <td class="login_start_box login_start_element" ><input name="note"></td>
+                    <td class = "save-td"><button type="submit">save</button></td> 
+                </tr>
+
+                <tr>
+                    <th>Update support message:</th>
+                    <td class="login_start_box login_start_element"  ><input name="supportMsg"></td>
+                        <td class = "save-td"><button type="submit">save</button></td>
+                        
+                </tr>
+            </form>
+        </table>
+    </div>
+
+    <div class="login_start_element" id = "data">
+        <table>
+            <thead>
+                <tr>
+                    <th>Health data</th>
+                    <th>Today's data</th>
+                    <th>Safety thresholds (MIN)</th>
+                    <th>Safety thresholds (MAX)</th>
+                <tr>
+            </thead>
+            
+            <tbody>
+                {{#each record.data}}
+                <tr>
+                    {{#ifRequired this.status}}
+
+                        {{#ifRecorded this.status}}
+                            {{#ifAbnormal this.valueMin this.valueMax this.value}}
+                                <td class="login_start_box" id = "dangerous" >{{this.fullName}}: </td>
+                                <td class="login_start_box login_start_element" >{{this.value}}</td>
+                
+                            {{else}}
+                                <td class="login_start_box" id ="safe" >{{this.fullName}}: </td>
+                                <td class="login_start_box login_start_element" >{{this.value}}</td>
+                            {{/ifAbnormal}}
+                        {{/ifRecorded}}
+
+                        {{#ifUnrecorded this.status}}
+                            <td class="login_start_box" id = "empty" >{{this.fullName}}: </td>
+                            <td class="login_start_box login_start_element" > </td>
+                        {{/ifUnrecorded}}
+                            
+                        <td class="login_start_box login_start_element" >{{this.valueMin}}</td>
+                        <td class="login_start_box login_start_element">{{this.valueMax}}</td>
+                    
+                    {{/ifRequired}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="login_start_element login_start_box" id="edit">
+        <a  href = '/home/edit_details/{{patient._id}}'>edit</a>
+    </div>
+</div>
+
+{{> logout}}

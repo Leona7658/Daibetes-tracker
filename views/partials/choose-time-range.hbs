@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/public/style/choose-time-range.css">
+
+<form id = "time-range" action="/home/note_history/{{patient._id}}" method="POST">
+
+
+
+        <label for="timeRange" id="choose-time-range">Choose time range: </label>
+        <select name ="timeRange" class = "mode_background">
+            
+            <option value ="Date" > -- --</option>
+            <option value ="3 days">3 days</option>
+            <option value="a week">a week</option>
+            <option value="a month">a month</option>
+            <option value="3 months">3 months</option>
+            <option value="6 months">6 months</option>
+            <option value="all">all</option>
+        </select>
+        <button type="submit">submit</button>
+
+
+</form>

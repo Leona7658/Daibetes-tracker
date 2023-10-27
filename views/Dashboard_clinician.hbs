@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="../public/style/Dashboard_clinician.css">
+
+{{> about-top-nav}}
+
+<h2 id="Title">Clinician Dashboard</h2>
+
+{{#each patient}}
+<div class="Patient">
+
+    <a href="/home/all_comment/{{this._id}}" >
+        <p class="login_start_element name">{{this.firstName}} {{this.lastName}}</p>
+    </a> 
+
+    {{#each this.records}}
+    
+        {{#ifRecent this.recordDate}}
+
+            <div  class="Data-block">
+                {{#each this.data}}
+                    {{#ifRecorded this.status}}
+                        {{#ifAbnormal this.valueMin this.valueMax this.value}}
+                            <div class="login_start_box" style="background-color: var(--danger);">
+                                <a href="/home/all_comment/{{../patientId}}"><p>{{this.fullName}}: {{this.value}}</p></a>
+                            </div>
+                            
+                            {{else}}
+                            <div class="login_start_box" style="background-color: var(--recorded);">
+                                <a href="/home/all_comment/{{../patientId}}"><p>{{this.fullName}}: {{this.value}}</p></a>
+                            </div>
+                        {{/ifAbnormal}}
+                    {{/ifRecorded}}
+
+                    {{#ifUnrecorded this.status}}
+                    <div class="login_start_box" style="background-color: var(--unrecorded)">
+                        <a href="/home/all_comment/{{../patientId}}"><p>{{this.fullName}}: </p></a>
+                    </div>
+                    {{/ifUnrecorded}}
+                {{/each}}
+            </div>  
+
+        {{/ifRecent}}
+    {{/each}}
+
+</div>
+{{/each}}
+
+<button class = "register-button">
+    <a href="/home/register">Register <br> New&nbspPatient</a> 
+</button>
+
+{{> logout}}  

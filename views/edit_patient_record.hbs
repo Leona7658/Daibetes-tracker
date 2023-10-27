@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="/public/style/edit_patient_record.css">
+
+{{> about-top-nav}}
+{{> c-top-nav}}
+
+<div class = "patient_details_container">
+    <div id="subtitle">
+        <h3 style = "text-align: left;">Edit Health Data</h3>
+    </div>
+
+    <div id = "avatar" >
+        <img src="/public/image/avatar/images.jpg" alt="user image">
+        <figcaption id = "patient_name">{{patient.firstName}} {{patient.lastName}}</figcaption>
+    </div>
+    
+    <div class="login_start_element" id = "notes">
+        <table>
+            <thead>
+                <tr>
+                    <th >{{patient.firstName}} {{patient.lastName}}</th>
+                    <th >Safety Threshold Min</th>
+                    <th >Safety Threshold Max</th>
+                    <th >Select</th>
+                <tr>
+            </thead>
+        
+            <tbody>
+                
+                {{#each record.data}}  
+                <form action="/home/edit_details/{{../patient._id}}" method="POST">
+                    <tr>
+                        <input type="hidden" name="key" value="{{@key}}"> 
+                        
+                        <td>{{this.fullName}}: </td>
+                        
+                        <td class="login_start_box login_start_element">
+                            <input type="number", name="valueMin", placeholder="{{this.valueMin}}">
+                        </td>
+            
+                        <td class="login_start_box login_start_element">
+                            <input type="number", name="valueMax", placeholder="{{this.valueMax}}">
+                        </td>
+                        {{#ifUnrequired this.status}}
+                        <td >
+                            <input type="checkbox" class="checkbox"name="select"></input>
+                        </td>
+                        {{else}}
+                        <td >
+                            <input type="checkbox" class="checkbox" name="select" checked></input>
+                        </td>
+                        {{/ifUnrequired}}
+                        
+                        <td class = "save-td">
+                            <button  type="submit">save</button>
+                        </td>
+                        
+                    </tr>
+                </form>
+                {{/each}}
+            
+            </tbody>
+        </table>
+    </div>
+
+</div> 
+
+{{> logout}} 

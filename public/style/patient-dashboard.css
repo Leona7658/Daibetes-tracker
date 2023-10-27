@@ -1,0 +1,81 @@
+@import url("header-grid.css");
+
+button{
+    background-color: var(--pink-button-color);
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1vw;
+    
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto;
+    padding-top: 4vw
+
+}
+
+.patient-nav{
+    grid-area: 1/1/2/2;
+    display: flex;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li {
+    
+    margin-bottom: 3vw;
+    background-color:var(--text-bkgd-color);
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+    padding: 2vw;    
+}
+
+.patient-info{
+    grid-area: 1/2/2/3;
+}
+
+.patient-info p{
+text-align: center;
+}
+
+.image-and-button{
+    display: grid;
+    grid-template-areas: 'photo  button-change-password';
+}
+
+.photo{
+    grid-area: photo;
+    text-align: center;
+}
+
+.photo img{
+    display: block;
+    margin:auto;
+    border-radius: 45px;
+    width: 60%;
+    border: solid black;
+}
+
+.button-change-password{
+    grid-area: button-change-password;
+}
+
+.button-change-password button{
+    margin-bottom: 3vh;
+}
+
+.button-change-password img{
+    width: 6vw;
+}
+
+@media screen and (max-width: 640px) {  /* page layout for phones */
+    .main-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/public/style/edit_patient_record.css">
+
+{{> about-top-nav}}
+{{> p-top-nav}}
+
+<div class = "patient_details_container">
+    <div id="subtitle">
+        <h3 style = "text-align: left;">Recording Health Data</h3>
+    </div>
+
+    <div id = "avatar" >
+        <img src="../public/image/avatar/images.jpg" alt="user image">
+        <figcaption id = "patient_name">{{record.patientId.screenName}}</figcaption>
+    </div>
+    
+    <div class="login_start_element" id = "notes">
+        <table>
+            <thead>
+                <tr>
+                    <th >Today's data</th>
+                    <th >Value</th>
+                    <th >Comments</th>
+                <tr>
+            </thead>
+        
+            <tbody>
+                {{!-- loop each patient data  --}}
+                {{#each record.data}}
+                <form action="/home/record_health_data" method="POST">
+
+                <tr>
+                    {{!-- print record name --}}
+                    <input type="hidden" name="key" value="{{@key}}">
+                    {{#ifRequired this.status}}
+                        <td class="login_start_box login_start_element">{{this.fullName}}</td>
+
+                            {{#ifUnrecorded this.status}}
+                            {{!-- input data if not already in database --}}
+                                <td class="login_start_box" >
+                                    <input type="number" name="value" min="0"  required>
+                                </td>
+                            {{else}}
+                                <td class="login_start_box" >{{this.value}}</td>
+                            {{/ifUnrecorded}}
+                            
+                        {{!--  input comment for unrecorded data  --}}
+                        {{#ifUnrecorded this.status}}
+                        
+                            <td class="login_start_box">
+                                <input type="text" name="comment" >
+                            </td>
+                        {{else}}
+                            <td class="login_start_box" >{{this.comment}}</td>
+                        {{/ifUnrecorded}}
+
+                        {{!-- show submit button if unrecorded else show recorded time --}}
+                        {{#ifUnrecorded this.status}}
+                            <td> <button type="submit"> submit </td>
+                        {{else}}
+                            <td> {{this.createdAt}} </td>
+                        {{/ifUnrecorded}}
+                    {{/ifRequired}}
+                </tr>
+                </form>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{{> logout}}

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/public/style/top-nav.css">
+<script src="/public/js/top-nav.js" defer></script>
+
+<nav class = "top-nav">
+    <a href="#" class="toggle-button">
+        <span class="bar"> </span>
+        <span class="bar"> </span>
+        <span class="bar"> </span>    
+    </a>    
+    <div class = "nav-links" >
+        <ul>
+            <li><a href="/home/clinician_dashboard">Dashboard </a> </li>
+            {{#ifPatient patient.role}}
+            <li><a href="/home/patient_details/{{patient._id}}">Patient Details </a> </li>
+            <li><a href="/home/note_history/{{patient._id}}">Clinical Notes History </a> </li>
+            <li><a href="/home/health_history/{{patient._id}}">Health Data History</a> </li>
+            <li><a href="/home/all_comment/{{patient._id}}">Patient Comments </a> </li>
+            {{/ifPatient}}
+        </ul>
+
+    </div>
+
+</nav>

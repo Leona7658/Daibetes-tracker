@@ -1,0 +1,143 @@
+
+*{
+    /* To remove gaps between background image and the 2 sides of screen */
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --button-color:#CDDCDB;
+    --bkgd-image:url("/public/image/background-light.jpg");
+}
+
+.dark-theme{
+    --button-color:#8498C5;
+    --bkgd-image:url("/public/image/background-dark.jpg")
+}
+
+html {font-size: 2vw;}
+
+.main_body{
+    background-image: var(--bkgd-image);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    width: 100vw;
+    height: 104vh;
+}
+
+ /* header part */
+.header-grid1{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: 50px;
+
+}
+
+#dark-mode{
+    grid-area: 1/6/2/7;
+    padding-top: 0.5vw;
+    text-align: right;
+}
+
+#dark-mode button{
+    border: none;
+    padding: 1vw;
+    margin-right: 2vw;
+    background-color: var(--button-color); 
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    font-family: 'Courier New', cursive;
+}
+
+.diabete-home1{
+    grid-area: 1/1/2/2;
+    margin-left: 2vw;
+}
+
+/* main part */
+.flex_container{
+    display: grid;
+    grid-template-areas:
+    'top top top top top_right'
+    'main1 main main2 right right';
+}
+
+.flex_container > div {
+    padding: 4vw;
+    line-height: 3vw;
+}
+
+
+#title1{
+    grid-area: main;
+}
+
+.about{
+    grid-area: right ;
+}
+
+.message{
+    padding: 2vw;
+    font-family: 'Courier New', cursive;
+}
+
+.links{
+    padding-top: 10vw;
+    font-family: 'Courier New',cursive;
+    font-style: normal;
+    align-items: center;
+}
+
+#about_diabetes{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px; 
+    background-color: var(--button-color);
+    text-align: center;
+    padding: 2vw;
+    margin-bottom: 2vw;
+
+}
+
+#about_websites{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px; 
+    background-color: var(--button-color);
+    text-align: center;
+    padding: 2vw;
+}
+
+#sign_in{
+    padding: 2vw;
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+    color: #505050;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;  
+    z-index: 1;
+}
+
+/* phone size part */
+@media screen and (max-width: 640px) {  /* page layout for phones */
+    .flex_container{
+        display: grid;
+        font-size: 90%;
+        grid-template-areas: 
+        'main main'
+        'right right';
+    }
+
+    a{
+        font-size: 3vh;
+    }
+}

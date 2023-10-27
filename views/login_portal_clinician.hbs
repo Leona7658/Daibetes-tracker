@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/public/style/login.css">
+
+<form action="/home/login_clinician" method="POST">
+<div class="login_portal">
+    <div class="login_start_element main_text" id="login">
+        Clinician Portal
+    </div>
+    
+    <div class = "main_text" id="details">
+        <ul id ="list_vert">
+            <li >
+                <label for="username">userid:</label>
+                </li>
+            <li>
+                    <input class= "login_start_element login_start_box " 
+                    name = "username" required> </input>
+            </li>
+            <li>
+                <label for="password">password:</label>
+            </li>
+            <li>
+                <input class= "login_start_element login_start_box" 
+                type = "password" name="password" required> </input>
+
+            </li>
+        </ul>
+    </div>
+
+        
+    {{#if reminder }}
+    <div id="others">
+        <div class= "login_start_element" >
+                {{reminder}}
+        </div>
+    </div>
+    {{/if}}
+
+    <div class = "main_text" id="submit">
+        
+        <button type="sumbit">login</button>
+        
+    </div>
+   
+
+    <div class="login_start_element" id="other_portal">
+        <a href="/home/login_patient" style="color:#505050">not a clinician? go to PATIENT PORTAl</a>
+    </div>
+
+</div>
+</form>

@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/public/style/History_of_recording.css">
+              
+{{> about-top-nav}}
+{{#ifPatient user.role}}
+    {{> p-top-nav}}
+{{else}}
+    {{> c-top-nav}}
+
+{{/ifPatient}}
+
+{{#ifPatient user.role}}
+<form action="/home/health_history" method="POST">
+{{else}}
+<form action="/home/health_history/{{patient._id}}" method="POST">
+{{/ifPatient}}
+
+{{> choose-time-range}}
+
+<div class = "main_part">
+    <table style="width:100%">
+        <tr>
+            <th input type="text">{{patient.firstName}} {{patient.lastName}}</th>
+             
+            <th>blood glucose level (nmol/L)</th>
+            <th>weight (kg)</th>
+            <th>dose of insulin taken(number of dose)</th>
+            <th>excerise (step count)</th>
+            
+        </tr>
+            {{#each records}}
+            <tr>
+                <td>{{this.recordDate}}</td>
+                {{#each this.data}}
+                    {{#ifRecorded this.status}}
+                        <td class="grey_block">
+                        {{findTime this.createdAt}}: {{this.value}} 
+                        </td>
+
+                    {{else}}
+                    <td class="grey_block">
+                        {{#ifRequired this.status}} 
+                            not recorded
+                            {{else}}
+                            unrequired
+                        {{/ifRequired}}
+                    </td>
+                {{/ifRecorded}}
+                {{/each}}
+            
+            </tr>
+           {{/each}}
+    </table>
+</div>
+
+{{> logout}}
+

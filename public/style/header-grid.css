@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color: #CDDCDB;
+    --button-color:#FFFFFF;
+    --pink-button-color:#F8EAE7;
+    --text-bkgd-color:#FFFFFF;
+    --unrecorded:#F6FAFF;
+    --recorded:#DFF1F0;
+    --danger:#ffbaa9;
+    --danger-inner:#F5E8E5;
+    --danger-border:#FF977E;
+}
+
+.dark-theme{
+    --background-color: #687DA8;
+    --button-color:#8498C5;
+    --pink-button-color:#8498C5;
+    --text-bkgd-color:#8498C5; 
+    --unrecorded:#AEB5C8; 
+    --recorded:#8498C5; 
+    --danger:#D0BDAF;
+    --danger-inner:#D0BDAF;
+    --danger-border:#D78E58;
+}
+
+body { 
+    background-color: var(--background-color);
+    font-size: 3vh;
+    font-family: 'Roboto Slab';
+    margin: 0;
+    padding: 0;    
+}
+
+.header-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+}
+
+.diabete-home{
+    grid-area: 1/1/2/3;
+    margin-left: 2vw;
+}
+
+.diabete-home-first{
+    font-family: 'Courier New',cursive;
+    font-size: 3vw;
+    font-weight: bold;   
+    margin-top: 1vw;   
+    margin-bottom: 1vw;
+}
+
+.buttons{
+    grid-area: 1/5/2/7;
+    display: flex;
+    justify-content: right;
+    
+}
+
+.buttons button, .logout{
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+    background-color: var(--button-color);
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1vw;
+    font-family: 'Courier New',cursive;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;  
+    background-color: var(--background-color);  
+    z-index: 1;
+}
+
+.logout{
+    position: fixed;
+    bottom: 30px;
+    left: 3px;
+    z-index: 2;
+
+}
+
+#bottom-indentation {
+    display: flex;
+    padding: 20px;
+}

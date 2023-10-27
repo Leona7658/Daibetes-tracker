@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="../public/style/patient-dashboard.css">
+
+<div class = "main-grid">
+    
+    <div class = "patient-info">
+        <p>" {{patient.supportMessage}} "</p>
+        <div class = "image-and-button">
+            
+            <div class = "photo"> 
+                <img src="../public/image/avatar/images.jpg" alt="user image">
+                <figcaption>{{patient.screenName}}</figcaption>
+            </div>
+
+            <div class = "button-change-password">
+                
+                <a href="/home/changePassword">
+                <button>change password</button> 
+                <br> 
+                </a>
+                {{#ifBadge patient.eRate}}
+                    <img src="../public/image/medal 1.png" alt="this is badge">
+                {{/ifBadge}}                 
+            </div>
+            
+        </div>
+    </div>
+
+    <nav class = "patient-nav">
+        <ul>
+            <li><a href="/about_diabetes">About Diabetes </a> </li>
+            <li><a href="/about_team">About This Website </a> </li>
+            <li><a href="/home/record_health_data">Record Health Data Today</a> </li>
+            <li><a href="/home/leaderboard">Leaderboard </a> </li>
+            <li><a href="/home/health_history">History of Recording</a> </li>
+        </ul>
+    </nav>
+</div>
+
+{{> logout}}

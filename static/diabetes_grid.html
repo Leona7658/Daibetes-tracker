@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about diabetes</title>
+    <link rel="stylesheet" href="../public/style/diabetes_team_grid.css">
+    <link rel="stylesheet" href="../public/style/header-grid.css">
+   
+
+</head>
+
+<body>
+    <header class="header-grid">
+        <div class = "diabete-home">
+              <p class = "diabete-home-first">
+                  <a href="/">Diabetes@Home</a>
+              </p>        
+        </div>
+  
+        <div class = "buttons">
+            <div ><button id = "dark-mode">Dark&nbspMode</button> </div>
+            <div ><button><a href="javascript:history.back()">Back</a></button></div>
+        </div>
+  
+    </header>
+
+    <main class = "grid_box">
+        <div class = down_left>
+            <iframe id="video" src="https://www.youtube.com/embed/wZAjVQWbMlE" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+
+            <div class = "text_background">         
+                <p><a href="https://www.mayoclinic.org/diseases-conditions/diabetes/symptoms-causes/syc-20371444"> 
+                    Diabetes Symptoms</a>  </p>   
+ 
+                <p><a href="https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes#:
+                     ~:text=Diabetes%%20%20%20%20%20%20%20%20%20%20%20%20%2020is%20a%20disease%20that,to%20be%20used%20for%20energy."> 
+                     What is Diabetes</a>
+                </p>    
+            </div> 
+        </div>
+        <div class = "down_right" >         
+            <h4 class = "text_background" style="margin-bottom: 5vw;" > 
+                Diabetes Information
+            </h4>
+
+            <p class = "text_background" > 
+                Diabetes is a chronic (long-lasting) health condition 
+                that affects how your body turns food into energy.
+                Most of the food you eat is broken down into sugar 
+                (also called glucose) and released into your bloodstream.
+                When your blood sugar goes up, it signals your pancreas to release insulin.
+                Insulin acts like a key to let the blood sugar into
+                your body’s cells for use as energy.
+            
+            </p>
+        </div>
+
+
+    </main>
+
+    <footer >
+        copy right reserved by Diabetes@home
+    </footer>
+
+    <script>
+        const mode = document.getElementById("dark-mode");
+        mode.onclick = function(){
+          document.body.classList.toggle("dark-theme");
+        }
+      </script>
+    
+</body>
+</html>

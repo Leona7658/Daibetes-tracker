@@ -1,0 +1,33 @@
+.mode_background{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px; 
+    background-color: white ;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+}
+table, th, td {
+  border: 1px;
+  padding: 1vw;
+  font-size: 2vw;
+}
+
+.grey_block{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px; 
+    background-color: var(--text-bkgd-color) ;
+    text-align: center;
+
+    
+}
+
+@media screen and (max-width: 812px) { 
+  table{
+    height: 80vh;
+  }
+  .grey_block{
+    border-radius: 25px;
+
+  }
+}
