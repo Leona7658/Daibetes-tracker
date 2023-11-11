@@ -13,14 +13,14 @@
 - Node.js, Express.js, MongoDB, HTML, Javascript, CSS, Handlebars
 ## Table of Contents
 - [Home](#home)
-- [Clinican Dashboard](#clinican-dashboard)
+- [Clinican Dashboard](#clinican-account)
 - [Patient Dashboard](#patient-dashboard)
 
-## Home and Usage
+## Home
 - Diabetes@home allows patient to record their daily health data, health data history, see patient comments, clinician note history and a leaderboard to encourage patients to record their health data. 
 - Registered clinican can track their patients information, edit clinican comments, add notes, change health data threshold, see clinican note history of a specific patient and register a new patient.
 
-## Image Display for Clinican account
+## Clinican Account
 Created account: chris@gmail.com
 Password: 12345678
 
