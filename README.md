@@ -12,9 +12,9 @@
 # Tools:
 - Node.js, Express.js, MongoDB, HTML, Javascript, CSS, Handlebars
 ## Table of Contents
-- [Home](#section-1)
-- [Clinican Dashboard](#section-2)
-- [Patient Dashboard](#section-3)
+- [Home](#home)
+- [Clinican Dashboard](#clinican-dashboard)
+- [Patient Dashboard](#patient-dashboard)
 
 ## Home and Usage
 - Diabetes@home allows patient to record their daily health data, health data history, see patient comments, clinician note history and a leaderboard to encourage patients to record their health data. 
